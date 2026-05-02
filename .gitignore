@@ -1,0 +1,6 @@
+node_modules/
+attic/
+*.tgz
+*.vsix
+*.swp
+*.code-workspace

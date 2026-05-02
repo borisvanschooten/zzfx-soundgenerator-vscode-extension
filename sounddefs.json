@@ -1,0 +1,9 @@
+{
+  "zzfx-sound-generator": "1.0",
+  "sounds": [
+	{ "name": "explo", "type": "Explo", "seed": 12345 },
+
+	{ "name": "hit", "type": "Hit", "seed": 12345 }
+	
+  ]
+}

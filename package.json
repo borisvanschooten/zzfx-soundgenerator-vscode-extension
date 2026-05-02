@@ -1,0 +1,76 @@
+{
+  "name": "zzfx-soundgenerator",
+  "publisher": "borisvanschooten",
+  "displayName": "ZzFX Sound Generator",
+  "description": "Generate sounds via a JSON file",
+  "categories": ["Programming Languages"],
+  "keywords": ["sound generation", "game audio" ],
+  "icon": "zzfx-logo-128px.png",
+  "repository": "https://github.com/borisvanschooten/zzfx-soundgenerator-vscode-extension",
+  "version": "0.1.0",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.102.0"
+  },
+  "activationEvents": [
+    "onLanguage:json",
+    "onLanguage:jsonc"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "zzfxSoundGenerator.changeType",
+        "title": "ZZFX: Change Type"
+      },
+      {
+        "command": "zzfxSoundGenerator.randomizeSeed",
+        "title": "ZZFX: Randomize Seed"
+      },
+      {
+        "command": "zzfxSoundGenerator.playSound",
+        "title": "ZZFX: Play Sound"
+      },
+      {
+        "command": "zzfxSoundGenerator.addNewSound",
+        "title": "ZZFX: Add New Sound"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "zzfxSoundGeneratorContainer",
+          "title": "ZZFX",
+          "icon": "zzfx-logo-24px-tr.png"
+        }
+      ]
+    },
+    "views": {
+      "zzfxSoundGeneratorContainer": [
+        {
+          "type": "webview",
+          "id": "zzfxSoundGeneratorWebView",
+          "name": "ZzFX Sound Player",
+          "icon": "zzfx-logo-24px-tr.png"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "zzfxSoundGeneratorWebView",
+        "contents": "ZzFX sound player will appear here."
+      }
+    ]
+  },    
+
+  "scripts": {
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.102.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
