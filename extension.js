@@ -265,13 +265,14 @@ function activate(context) {
             const type = typeof sound.typeValue === 'string' && sound.typeValue.length > 0 ? sound.typeValue : 'Random';
             const seed = normalizeSeedValue(sound.seedValue);
 
-            try {
+            // use this to open webview debug console
+            /*try {
                 const result = await vscode.commands.executeCommand(
                     'workbench.action.webview.openDeveloperTools'
                 );
                 void result;
             } catch (e) {
-            }
+            }*/
 
             playZzFXSound(type, seed);
         })
@@ -299,7 +300,7 @@ function activate(context) {
             const insertPos = new vscode.Range(lastSound.objectRange.end,lastSound.objectRange.end)
             const edit = new vscode.WorkspaceEdit();
 
-            edit.replace(document.uri, insertPos, `,\n\n\t{"name": "", "type": "Random", "seed": 1}`);
+            edit.replace(document.uri, insertPos, `,\n\n    {"name": "", "type": "Random", "seed": 1}`);
 
             await vscode.workspace.applyEdit(edit);
         })

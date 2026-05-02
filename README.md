@@ -4,7 +4,7 @@ This extension is based on [ZzFX](https://killedbyapixel.github.io/ZzFX/), which
 
 This extension plays ZzFX generated sounds specified in a JSON file, via codelenses.  You can quickly define the sounds by specifying sound type and random seed in a JSON file, which can then be loaded into your game. An example sound player is included in the GIT repository (exampleplayer.html).  This player loads the JSON definitions, then creates buttons for playing the sounds.
 
-The sound is played via a webview in the action bar.  Select the ZzFX tab in the action bar, then press the Play button once to enable sounds (this is a Chromium security feature).  Then you can use the codelenses to edit and play sounds.
+The sound is played via a webview in the action bar.  Select the ZzFX tab in the action bar, then press the Play button once to enable sounds (this is a Chrome security feature).  Then you can use the codelenses to edit and play sounds.
 
 ![zzfx](./zzfx-screenshot-with-annotations.png)
 
@@ -14,7 +14,7 @@ The JSON sounds specification should look like this:
 
 ```
 {
-  "zzfx-sound-generator": "1.0",   // <-- this indicates that this is a sound generator definition file
+  "zzfx-sound-generator": "1.0",   // <-- this line indicates that this is a sound generator definition file
   // you can define a number of sounds by specifying name, type, and seed. Type and seed are used to create a random sound.
   "sounds": [ 
 	{ "name": "explo", "type": "Explo", "seed": 12345 },
